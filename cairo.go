@@ -64,6 +64,19 @@ const (
 	CONTENT_COLOR_ALPHA Content = 0x3000
 )
 
+// cairo_pdf_metadata_t
+type PDFMetadata int
+
+const (
+	PDF_METADATA_TITLE PDFMetadata = iota
+	PDF_METADATA_AUTHOR
+	PDF_METADATA_SUBJECT
+	PDF_METADATA_KEYWORDS
+	PDF_METADATA_CREATOR
+	PDF_METADATA_CREATE_DATE
+	PDF_METADATA_MOD_DATE
+)
+
 // cairo_operator_t
 type Operator int
 

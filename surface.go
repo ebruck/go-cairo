@@ -838,3 +838,12 @@ func (self *Surface) SetImage(img image.Image) {
 		panic("Unknown surface format")
 	}
 }
+
+///////////////////////////////////////////////////////////////////////////////
+// Other methods
+
+func (self *Surface) SetMetadata(metadata PDFMetadata, value string) {
+	cs := C.CString(value)
+	defer C.free(unsafe.Pointer(cs))
+	C.cairo_pdf_surface_set_metadata(self.surface, C.cairo_pdf_metadata_t(metadata), cs)
+}
